@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principal</title>
+    <style>
+        /* Estilos de la pantalla de carga */
+        .splash-screen {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        /* Animación del logo en la pantalla de carga */
+        .splash-logo {
+            width: 150px;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        /* Animación de desvanecimiento */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(2);
+            }
+        }
+
+        /* Pantalla principal */
+        .welcome-screen {
+            display: none; /* Inicialmente no es visible */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Pantalla de carga -->
+    <div class="splash-screen">
+        <img src="img/LOGO PRIMARIO.png" class="splash-logo" alt="Logo Vera Pizza">
+    </div>
+
+    <!-- Pantalla principal (después de la animación) -->
+    <div class="welcome-screen">
+        <!-- Aquí puedes agregar más contenido de la página principal -->
+    </div>
+    <!-- Script de la animación y redirección -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Esperar 3 segundos para la animación de la pantalla de carga
+            setTimeout(() => {
+                // Ocultar la pantalla de carga y mostrar la pantalla principal inmediatamente
+                document.querySelector('.splash-screen').style.display = 'none';
+                document.querySelector('.welcome-screen').style.display = 'flex';
+
+                // Redirigir a index.html después de que la animación haya terminado
+                window.location.replace('index.html'); // Usamos replace para evitar que se pueda volver a la splash
+            }, 3000); // Espera 3 segundos (duración de la animación)
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/LOGO LA VERA PIZZA.png" type="image/x-icon">
+    <title>Productos</title>
+
+</head>
+
+<body>
+
+    <h4 class="category-header">Panificados</h4>
+
+
+    <div class="product-card">
+        <img src="img/baguettes.png" alt="Producto" class="product-image" onclick="openImage(this)">
+        <div class="product-info">
+            <h3 class="product-name">Baguettes</h3>
+            <p class="product-description">Masa Madre</p>
+            <div class="product-footer">
+                <span class="product-price">$1000</span> <!-- Precio -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Baguettes')">-</button>
+                    <input type="text" id="Baguettes" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Baguettes')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="product-card">
+
+        <img src="img/baguettes.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Ciabattas</h3>
+            <p class="product-description">Masa Madre</p>
+            <div class="product-footer">
+                <span class="product-price">$1000</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Ciabattas')">-</button>
+                    <input type="text" id="Ciabattas" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Ciabattas')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+
+        <img src="img/hogazas.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Hogazas</h3>
+            <p class="product-description">Masa Madre</p>
+            <div class="product-footer">
+                <span class="product-price">$2500</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Hogazas')">-</button>
+                    <input type="text" id="Hogazas" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Hogazas')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+
+        <img src="img/pan_de_molde_nlanco.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Pan de Molde Blanco</h3>
+            <p class="product-description">Masa Madre
+            </p>
+            <div class="product-footer">
+                <span class="product-price">$2500</span>
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Pan de Molde Blanco')">-</button>
+                    <input type="text" id="Pan de Molde Blanco" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Pan de Molde Blanco')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+
+        <img src="img/pan_de_molde_nlanco.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Pan de Molde Centeno</h3>
+            <p class="product-description">Masa Madre</p>
+            <div class="product-footer">
+                <span class="product-price">$3800</span>
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Pan de Molde Centeno')">-</button>
+                    <input type="text" id="Pan de Molde Centeno" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Pan de Molde Centeno')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+
+        <img src="img/pan_de_molde_integral.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Pan de Molde Integral</h3>
+            <p class="product-description">Masa Madre</p>
+            <div class="product-footer">
+                <span class="product-price">$3500</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Pan de Molde Integral')">-</button>
+                    <input type="text" id="Pan de Molde Integral" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Pan de Molde Integral')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="category-header">Focacceria</h4>
+    <div class="product-card">
+
+        <img src="img/focaccia_individual.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Focaccia Individual</h3>
+            <p class="product-description">Focaccia, Romero, Sal, Aceite de oliva</p>
+            <div class="product-footer">
+                <span class="product-price">$2000</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Focaccia Individual')">-</button>
+                    <input type="text" id="Focaccia Individual" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Focaccia Individual')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+
+        <img src="img/focaccia_plancha.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Focaccia Plancha</h3>
+            <p class="product-description">Focaccia, Romero, Sal, Aceite de oliva, (1 kg)</p>
+            <div class="product-footer">
+                <span class="product-price">$4000</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Focaccia Plancha')">-</button>
+                    <input type="text" id="Focaccia Plancha" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Focaccia Plancha')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4 class="category-header">Prepizzas</h4>
+    <div class="product-card">
+
+        <img src="img/prepizza_napolitana.png" alt="Producto" class="product-image" onclick="openImage(this)">
+
+        <div class="product-info">
+            <h3 class="product-name">Prepizza Napolitana Individual</h3>
+            <p class="product-description">Harina de Fuerza, Salsa de tomate Pomodoro.</p>
+            <div class="product-footer">
+                <span class="product-price">$1200</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Prepizza Napolitana Individual')">-</button>
+                    <input type="text" id="Prepizza Napolitana Individual" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Prepizza Napolitana Individual')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card">
+
+        <img src="img/prepizza_napolitana.png" alt="Producto" class="product-image" onclick="openImage(this)">
+        <div class="product-info">
+            <h3 class="product-name">Prepizza Napolitana (Packanging)</h3>
+            <p class="product-description">Harina de Fuerza, Salsa de tomate Pomodoro.</p>
+            <div class="product-footer">
+                <span class="product-price">$1700</span> <!-- Precio debajo de la imagen -->
+                <div class="quantity-controls">
+                    <button type="button" onclick="decreaseQuantity('Prepizza Napolitana (Packanging)')">-</button>
+                    <input type="text" id="Prepizza Napolitana (Packanging)" class="quantity" value="0" readonly>
+                    <button type="button" onclick="increaseQuantity('Prepizza Napolitana (Packanging)')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-card">
+        <img src="img/prepizza_napolitana.png" alt="Producto" class="product-image" onclick="openImage(this)">
+    <div class="product-info">
+        <h3 class="product-name">Prepizza Napolitana 8 porciones</h3>
+        <p class="product-description">Harina de Fuerza, Salsa de tomate Pomodoro.</p>
+        <div class="product-footer">
+            <span class="product-price">$1800</span> <!-- Precio debajo de la imagen -->
+            <div class="quantity-controls">
+                <button type="button" onclick="decreaseQuantity('Prepizza Napolitana 8 porciones')">-</button>
+                <input type="text" id="Prepizza Napolitana 8 porciones" class="quantity" value="0" readonly>
+                <button type="button" onclick="increaseQuantity('Prepizza Napolitana 8 porciones')">+</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="product-card">
+        <img src="img/prepizza_napolitana.png" alt="Producto" class="product-image" onclick="openImage(this)">
+    <div class="product-info">
+        <h3 class="product-name">Prepizza Napolitana Molde Rectangular</h3>
+        <p class="product-description">Harina de Fuerza, Salsa de tomate Pomodoro.</p>
+        <div class="product-footer">
+            <span class="product-price">$1800</span> <!-- Precio debajo de la imagen -->
+            <div class="quantity-controls">
+                <button type="button" onclick="decreaseQuantity('Prepizza Napolitana Molde Rectangular')">-</button>
+                <input type="text" id="Prepizza Napolitana Molde Rectangular" class="quantity" value="0" readonly>
+                <button type="button" onclick="increaseQuantity('Prepizza Napolitana Molde Rectangular')">+</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="product-card-2">
+        <img src="img/pizzetas.png" alt="Producto" class="product-image" onclick="openImage(this)">
+    <div class="product-info">
+        <h3 class="product-name">Prepizza Pizzetas 4 unidades</h3>
+        <p class="product-description">Harina de Fuerza, Salsa de tomate Pomodoro.</p>
+        <div class="product-footer">
+            <span class="product-price">$2000</span> <!-- Precio debajo de la imagen -->
+            <div class="quantity-controls">
+                <button type="button" onclick="decreaseQuantity('Prepizza Pizzetas 4 unidades')">-</button>
+                <input type="text" id="Prepizza Pizzetas 4 unidades" class="quantity" value="0" readonly>
+                <button type="button" onclick="increaseQuantity('Prepizza Pizzetas 4 unidades')">+</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal para mostrar la imagen en pantalla completa -->
+    <div id="image-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeImage()">&#x2715;</button>
+            <img id="full-image" alt="Producto en pantalla completa">
+        </div>
+    </div>
+    <script>
+        function openImage(imageElement) {
+            const modal = document.getElementById("image-modal");
+            const fullImage = document.getElementById("full-image");
+
+            // Configurar la imagen del modal
+            fullImage.src = imageElement.src;
+
+            // Mostrar el modal
+            modal.style.display = "flex";
+        }
+
+        function closeImage() {
+            const modal = document.getElementById("image-modal");
+
+            // Ocultar el modal
+            modal.style.display = "none";
+        }
+    </script>
+
+    <script src="scripts.js"></script>
+
+    <div class="button-container-1">
+        <a href="carrito.html">
+            <div class="cart-icon">
+                <img src="img/carrito-de-compras.png" alt="Cart Icon">
+                <div id="cart-count">0</div> <!-- Contador del carrito -->
+            </div>
+    </div>
+</body>
+
+<footer>
+    <a href="index.html">
+        <img src="img/casa.png" alt="Logo 1">
+    </a>
+    <div class="separator"></div>
+
+    <a href="resumen.html">
+        <img src="img/resumen.png" alt="Logo 1">
+    </a>
+    <div class="separator"></div>
+
+
+    <a href="productos-ventas.html">
+        <img src="img/pedidos.png" alt="Logo 3">
+    </a>
+    <div class="separator"></div>
+
+    <a href="contacto.html">
+        <img src="img/veremos.png" alt="Logo 2">
+    </a>
+
+
+</footer>
+
+</html>

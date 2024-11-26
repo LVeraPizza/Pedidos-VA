@@ -1,0 +1,198 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: no-repeat center/cover url("img/fondo_login.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Login Container */
+.login-container {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+}
+
+/* Decorative Circle */
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 120px;
+  background: no-repeat center/cover url("img/LOGO\ PRIMARIO.png");
+  border-radius: 50%;
+  z-index: 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Title */
+.login-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #666;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #6e8efb;
+  box-shadow: 0 0 5px rgba(110, 142, 251, 0.5);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px 15px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #5c78e0, #9f69d2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Signup Link */
+.signup-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.signup-link a {
+  color: #6e8efb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+
+  .login-form h2 {
+    font-size: 20px;
+  }
+
+  input,
+  button {
+    font-size: 14px;
+  }
+}
+
+
+/* Estilo del fondo negro semitransparente */
+body.loading-active {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo oscuro con opacidad */
+  overflow: hidden;
+  /* Evita que se pueda hacer scroll cuando está cargando */
+}
+
+/* Contenedor para el loading */
+.loading-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Fondo oscuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+  /* Inicialmente oculto */
+  flex-direction: column;
+  /* Esto coloca los elementos en columna */
+}
+
+/* Estilo del spinner */
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  /* Fondo del spinner */
+  border-top: 8px solid #ffffff;
+  /* Color de la parte superior */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+  /* Animación de rotación */
+  z-index: 2;
+  /* Asegura que el spinner esté encima */
+}
+
+/* Estilo del texto "Cargando..." */
+.loading-text {
+  position: flex;
+
+  /* Ajusta la distancia para que el texto esté debajo del spinner */
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+  /* El texto está debajo del spinner */
+}
+
+/* Animación para hacer girar el spinner */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

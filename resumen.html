@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/LOGO LA VERA PIZZA.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <title>Productos</title>
+</head>
+
+<body>
+    <h4 class="category-header">Resumen de Pedidos Finalizados</h4>
+
+    <div class="resumen-container">
+        <div id="pedido-list">
+            <!-- Los pedidos se añadirán aquí dinámicamente -->
+        </div>
+    </div>
+
+<script>
+// Recuperar los pedidos desde localStorage
+const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+
+// Renderizar los pedidos en orden descendente (más nuevos primero)
+function renderizarPedidos() {
+    const pedidoList = document.getElementById('pedido-list');
+    pedidoList.innerHTML = ""; // Limpiar la lista antes de mostrar los pedidos
+
+    // Mostrar los pedidos en orden descendente
+    pedidos.forEach((pedido, index) => {
+        const pedidoDiv = document.createElement('div');
+        pedidoDiv.className = 'pedido-card';
+
+        // Verificar si 'cartItems' está definido y tiene contenido
+        const productos = pedido.cartItems ? pedido.cartItems.split('\n') : [];
+
+        // Mostrar los datos del pedido
+        pedidoDiv.innerHTML = `
+                <h2>Pedido Finalizado</h2>
+                <p><strong>Nombre:</strong> ${pedido.name}</p>
+                <p><strong>Dirección:</strong> ${pedido.address}</p>
+                <p><strong>Fecha:</strong> ${pedido.calendar}</p>
+                <p><strong>Observaciones:</strong> ${pedido.Observaciones}</p>
+                <h3>Productos:</h3>
+                <ul>
+                    ${productos.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+                <p><strong>Total:</strong> $${pedido.totalAmount}</p>
+                <hr>
+                <button class="delete-button" data-index="${index}">Eliminar Pedido</button>
+                <button class="imprimir-button" data-index="${index}">Exportar a PDF</button>
+            `;
+
+        pedidoList.appendChild(pedidoDiv);
+    });
+
+    // Delegar el evento de eliminación de pedido
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const pedidoIndex = button.getAttribute('data-index'); // Obtener el índice del pedido
+            eliminarPedido(pedidoIndex);  // Llamar a la función para eliminar el pedido
+        });
+    });
+
+    // Delegar el evento de exportar a PDF
+    document.querySelectorAll('.imprimir-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const pedidoIndex = button.getAttribute('data-index');
+            const pedido = pedidos[pedidoIndex];
+            exportarPDF(pedido);
+        });
+    });
+}
+
+// Función para eliminar un pedido
+function eliminarPedido(pedidoIndex) {
+    // Eliminar el pedido del arreglo
+    pedidos.splice(pedidoIndex, 1);
+
+    // Actualizar el localStorage con el arreglo modificado
+    localStorage.setItem('pedidos', JSON.stringify(pedidos));
+
+    // Mostrar alerta y recargar la lista
+    alert("El pedido ha sido eliminado.");
+    renderizarPedidos(); // Recargar la lista de pedidos para reflejar los cambios
+}
+
+// Función para exportar el pedido a PDF
+function exportarPDF(pedido) {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    // Crear PDF
+    pdf.setFontSize(16);
+    pdf.text("Pedido Finalizado", 10, 10); // Título
+    pdf.setFontSize(12);
+
+    let y = 20;
+    pdf.text(`Nombre: ${pedido.name}`, 10, y);
+    y += 10;
+    pdf.text(`Dirección: ${pedido.address}`, 10, y);
+    y += 10;
+    pdf.text(`Fecha: ${pedido.calendar}`, 10, y);
+    y += 10;
+    pdf.text(`Observaciones: ${pedido.Observaciones}`, 10, y);
+    y += 20;
+
+    pdf.text("Productos:", 10, y);
+    y += 10;
+    const productos = pedido.cartItems ? pedido.cartItems.split('\n') : [];
+    productos.forEach((item, index) => {
+        pdf.text(`${index + 1}. ${item}`, 10, y);
+        y += 10;
+    });
+
+    y += 10;
+    pdf.text(`Total: $${pedido.totalAmount}`, 10, y);
+
+    // Descargar el PDF
+    pdf.save("pedido.pdf");
+}
+
+// Llamar la función para renderizar los pedidos
+renderizarPedidos();
+</script>
+</body>
+
+<footer>
+    <a href="index.html">
+        <img src="img/casa.png" alt="Logo 1">
+    </a>
+    <div class="separator"></div>
+
+    <a href="resumen.html">
+        <img src="img/resumen.png" alt="Logo 1">
+    </a>
+    <div class="separator"></div>
+
+    <a href="productos-ventas.html">
+        <img src="img/pedidos.png" alt="Logo 3">
+    </a>
+    <div class="separator"></div>
+
+    <a href="contacto.html">
+        <img src="img/veremos.png" alt="Logo 2">
+    </a>
+
+</footer>
+
+</html>
